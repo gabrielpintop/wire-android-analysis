@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  basePath: 'http://localhost:8080/api/'
+  basePath: 'https://wire-android-analysis.herokuapp.com/api/'
 };
