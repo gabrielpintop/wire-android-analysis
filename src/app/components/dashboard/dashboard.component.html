@@ -1,3 +1,61 @@
-<p>
-  dashboard works!
-</p>
+<div class="row bg-white">
+  <div *ngIf="loading" class="col-12 mt-5 text-center">
+    <i class="fas fa-spin fa-spinner text-dark fa-5x"></i>
+  </div>
+  <ng-container *ngIf="!loading && appInfo">
+    <div class="col-12 bg-dark text-center">
+      <a [href]="appInfo.url" target="blank">
+        <img class="mt-3" [src]="appInfo.icon" height="200px">
+      </a>
+      <h2 class="text-white mt-2">{{appInfo.title}}</h2>
+      <h6 class="text-white">App analysis by: </h6>
+      <h5 class="mb-3 mt-0 text-white"><a class="text-white font-weight-bold" href="https://a-garcia13.github.io/"
+          target="blank">Alejandro
+          García</a> & <a class="text-white font-weight-bold" href="https://gabrielpinto.me" target="blank">Gabriel
+          Pinto</a></h5>
+    </div>
+    <div class="col-md-8 col-10 mx-auto text-center">
+      <h5 class="mt-4 mb-3">
+        <i>{{appInfo.summary}}</i>
+      </h5>
+      <button class="btn btn-dark shadow mb-4" data-toggle="modal" data-target="#appDescriptionModal"><i
+          class="fas fa-plus"></i>&nbsp;See more</button>
+    </div>
+    <div class="col-12 bg-dark">
+      <div class="row text-center text-white">
+        <div class="col-md-4 mt-4 mb-4">
+          <h1>{{appInfo.scoreText}}</h1>
+          <h4><i class="fas fa-star"></i>&nbsp;STARS</h4>
+        </div>
+        <div class="col-md-4 mt-4 mb-4">
+          <h1>{{appInfo.installs}}</h1>
+          <h4><i class="fas fa-download"></i>&nbsp;INSTALLS</h4>
+        </div>
+        <div class="col-md-4 mt-4 mb-4">
+          <h1>{{appInfo.ratings}}</h1>
+          <h4><i class="fas fa-user"></i>&nbsp;RATINGS</h4>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<div class="modal fade" id="appDescriptionModal" tabindex="-1" role="dialog" aria-labelledby="appDescriptionModalLabel"
+  aria-hidden="true">
+  <div *ngIf="appInfo" class="modal-dialog modal-lg" role="document">
+    <div class="modal-content border-0">
+      <div class="modal-header bg-dark">
+        <h5 class="modal-title text-white" id="appDescriptionModalLabel">App description</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="text-white fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body small" [innerHTML]="appInfo.descriptionHTML">
+      </div>
+      <div class="modal-footer bg-dark text-center">
+        <button class="btn btn-dark border border-white shadow mx-auto" data-dismiss="modal"><i
+            class="fas fa-times"></i>&nbsp;Close</button>
+      </div>
+    </div>
+  </div>
+</div>
