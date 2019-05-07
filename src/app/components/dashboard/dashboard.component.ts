@@ -15,6 +15,14 @@ export class DashboardComponent implements OnInit {
 
   constructor(private scraper: ScraperService) {}
 
+  public connectivityImplementations = 4;
+
+  public connectivityImplementation = 1;
+
+  public storageImplementations = 4;
+
+  public storageImplementation = 1;
+
   ngOnInit() {
     this.scraper
       .getAppData()
@@ -28,5 +36,13 @@ export class DashboardComponent implements OnInit {
         alert(err);
         this.loading = false;
       });
+  }
+
+  changeConnectivity(pos) {
+    this.connectivityImplementation = pos;
+  }
+
+  changeStorage(pos) {
+    this.storageImplementation = pos;
   }
 }
