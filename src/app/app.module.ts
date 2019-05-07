@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [AppComponent, DashboardComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, EmojiModule],
   providers: [],
   bootstrap: [AppComponent]
 })

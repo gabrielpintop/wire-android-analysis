@@ -1,3 +1,14 @@
 .underline {
   text-decoration: underline;
 }
+
+
+iframe.shadow-lg {
+  width: 560px;
+}
+
+@media(max-width: 600px) {
+  iframe.shadow-lg {
+    width: 300px;
+  }
+}
