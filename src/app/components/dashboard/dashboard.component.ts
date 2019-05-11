@@ -19,9 +19,19 @@ export class DashboardComponent implements OnInit {
 
   public connectivityImplementation = 1;
 
-  public storageImplementations = 4;
+  public connectivityGoodPractices = 4;
+
+  public storageImplementations = 5;
 
   public storageImplementation = 1;
+
+  public securityImplementations = 2;
+
+  public securityImplementation = 1;
+
+  public performanceImplementations = 2;
+
+  public performanceImplementation = 1;
 
   ngOnInit() {
     this.scraper
@@ -44,5 +54,9 @@ export class DashboardComponent implements OnInit {
 
   changeStorage(pos) {
     this.storageImplementation = pos;
+  }
+
+  changePerformance(pos) {
+    this.performanceImplementation = pos;
   }
 }
